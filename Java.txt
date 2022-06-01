@@ -1,0 +1,1468 @@
+
+---------------------------------------------------------JDBC Driver -------------------------
+
+//package practicalCourse;
+import java.sql.*;
+
+public class connect {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  try {
+	            Connection connection = null;
+	            Class.forName("org.postgresql.Driver");
+	            
+	            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/psotgres", "postgres", "");
+	            
+	            System.out.println("Connection established successfully");
+	        } catch (Exception e) {
+	            System.out.print("error: \n" + e.toString() + "\n" + e.getMessage());
+	        }
+	}
+
+}
+
+
+--------------------------------------------------------------STRING ----------------------
+
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Trial {
+	@RequestMapping("/string")
+	public String show() {
+		
+		return "Enter the Val";
+	}
+}
+
+
+-----------------------------------------------------------------Dates-------
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Trial {
+	@RequestMapping("/dates")
+	public Date show() {
+		
+		return new Date();
+	}
+}
+
+---------------------------------------------------------------------------
+
+    <servlet>
+        <servlet-name>comingsoon</servlet-name>
+        <servlet-class>mysite.server.ComingSoonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>comingsoon</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+
+----------------------------------------------------------------------------------------
+
+Set-A: -
+Qa) Write a java program to accept names of 'n' cities, insert same into array list collection and display the contents of same array list, also remove all these elements.
+
+import java.io.*;
+import java.util.*;
+ class Demo
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader p=new BufferedReader(new InputStreamReader(System.in));
+ArrayList a=new ArrayList();
+System.out.println("Enter the No n cities");
+int n=Integer.parseInt(p.readLine());
+for(int i=0;i<n;i++)
+{
+System.out.println("Enter\t"+i+"\telemtns\n");
+String name=p.readLine();
+a.add(name);
+}
+System.out.println(a);
+a.clear();
+System.out.println(a);
+}
+}
+Output: -
+javac Demo.java -Xlint
+java Demo
+Enter the n number of cities
+2
+Enter	0	elemtns
+
+pune
+Enter	1	elemtns
+
+mumbai
+[pune, mumbai]
+
+
+Qb) Write a java program to read 'n' names of your friends, store it into linked list, also display contents of the same.
+
+import java.io.*;
+import java.util.*;
+class A1
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader p=new BufferedReader(new InputStreamReader(System.in));
+LinkedList l=new LinkedList();
+System.out.println("Enter the No n friends");
+int n=Integer.parseInt(p.readLine());
+for(int i=0;i<n;i++)
+{
+System.out.println("Enter\t"+i+"\telemtns\n");
+String name=p.readLine();
+l.add(name);
+}
+System.out.println(l);
+}
+}
+Output: -
+java A1
+Enter the n number of friends
+2
+Enter	0	elemtns
+
+atika
+Enter	1	elemtns
+
+nikhat
+[atika, nikhat]
+2
+
+Qc) Write a program to create a new tree set, add some colors (string) and print out the tree set.
+
+import java.util.*; 
+class Tset 
+{ 
+public static void main(String args[]) 
+{ 
+TreeSet t=new TreeSet(); 
+t.add("blue"); 
+t.add("red"); 
+t.add("green"); 
+t.add("argon"); 
+System.out.println(t); 
+} 
+} 
+Output: -
+java Tset 
+[argon, blue, green, red] 
+
+Qd) Create the hash table that will maintain the mobile number and student name. Display the contact list.
+import java.util.*;
+class A4
+{
+public static void main(String args[])
+{
+Hashtable ht=new Hashtable();
+ht.put("9970001090","Salik");
+ht.put("1234567890","Abeda");
+ht.put("1212121212","Sauleha");
+System.out.println(ht);
+TreeMap t=new TreeMap(ht);
+Iterator i=t.keySet().iterator();
+while(i.hasNext())
+{
+ String k=(String)i.next();
+System.out.println(k);
+}
+}
+}
+Set-B: -
+Qa) Accept 'n' integers from the user. Store and display integers in sorted order having proper collection class. The collection should not accept duplicate elements.
+
+import java.io.*;
+import java.util.*;
+class SetB1
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+TreeSet t=new TreeSet();
+System.out.println("Enter the total number to be entered");
+int n=Integer.parseInt(br.readLine());
+for(int i=0;i<n;i++)
+{
+System.out.println("Enter"+"\t"+i+"\t"+"Number:");
+String name=br.readLine();
+t.add(name);
+}
+System.out.println(t);
+}  
+ }
+
+OutPut:-
+ javac SetB1.java -Xlint
+ java SetB1
+Enter the total number to be entered
+3
+Enter	0	Number:
+1
+Enter	1	Number:
+3
+Enter	2	Number:
+4
+[1, 3, 4]
+
+
+Qb) Write a program to sort HashMap by keys and display the details before sorting and after sorting.
+
+import java.util.Map;  
+import java.util.HashMap;  
+import java.util.TreeMap;  
+import java.util.Iterator;  
+public class SumThread  
+{  
+public static void main(String args[])  
+{  
+//implementation of HashMap  
+HashMap<Integer, String> hm=new HashMap<Integer, String>();  
+//addding keys and values to HashMap  
+hm.put(23, "Yash");  
+hm.put(17, "Arun");  
+hm.put(15, "Swarit");  
+hm.put(9, "Neelesh");  
+Iterator <Integer> it = hm.keySet().iterator();         
+System.out.println("Before Sorting");  
+while(it.hasNext())  
+{  
+int key=(int)it.next();  
+System.out.println("Roll no:  "+key+"     name:   "+hm.get(key));  
+}  
+System.out.println("\n");  
+Map<Integer, String> map=new HashMap<Integer, String>();  
+System.out.println("After Sorting");  
+//using TreeMap constructor to sort the HashMap  
+TreeMap<Integer,String> tm=new  TreeMap<Integer,String> (hm);  
+Iterator itr=tm.keySet().iterator();               
+while(itr.hasNext())    
+{    
+int key=(int)itr.next();  
+System.out.println("Roll no:  "+key+"     name:   "+hm.get(key));  
+}    
+}  
+}  
+
+
+Qc) Write a program that loads names and phone numbers from a text file where the data is organized as one line per record and each field in a record are separated by a tab (\t).it takes a name or phone number as input and prints the corresponding other value from the hash table (hint: use hash tables)
+ import java.io.*;
+import java.util.*;
+class B3
+{
+public static void main(String args[])
+{
+try
+{
+FileInputStream fis=new FileInputStream("Details.txt");
+Scanner sc=new Scanner(fis).useDelimiter("\t");
+Hashtable ht=new Hashtable();
+String a[],a1,str;
+while(sc.hasNext())
+{
+a1=sc.nextLine();
+a=a1.split("\t");
+ht.put(a[0],a[1]);
+System.out.println(a[0]);
+System.out.println(a[1]);
+}
+Scanner s=new Scanner(System.in);
+System.out.println("Enter the name:");
+str=s.next();
+if(ht.containsKey(str))
+{
+System.out.println("phone number:"+ht.get(str));
+}
+else
+{
+System.out.println("name not matched:");
+}
+}
+catch(Exception e)
+{
+}
+}   }
+/* txt file( Details.txt)
+Atika	9765658852
+Saniya	123456789
+Nikhat	444456678937
+*/
+OUTPUT:-
+javac B3.java -Xlint
+ java B3
+Atika
+9765658852
+Saniya
+123456789
+Nikhat
+444456678937
+Enter the name:
+Atika
+phone number:9765658852
+
+
+
+
+
+
+
+
+
+
+
+Assignment-2: -Multithreading
+
+Set-A: -
+Qa) Program to define a thread for printing text on output screen for 'n' number of times. Create 3 threads and run them. Pass the text 'n' parameters to the thread constructor.
+ Example:
+First thread prints "COVID19" 10 times.
+a) Second thread prints "LOCKDOWN2020" 20 times
+iii. Third thread prints "VACCINATED2021" 30 times
+
+class Demo extends Thread
+{
+String msg;
+int n;
+Demo()
+{
+}
+Demo(String msg,int n)
+{
+this.msg=msg;
+this.n=n;
+}
+public void run()
+{
+try
+{
+for(int i=0;i<n;i++)
+{
+System.out.println(msg);
+Thread.sleep(5000);
+}
+}
+catch(Exception e)
+{
+}
+}
+}
+class Ass2A1
+{
+public static void main(String args[])
+{
+Demo t1=new Demo("Covid 19",10);
+Demo t2=new Demo("LockDoen 2020",20);
+Demo t3=new Demo("Vaccinated",30);
+t1.start();
+t2.start();
+t3.start();
+}
+}
+Output:-
+java Ass2A1
+Covid 19
+Vaccinated
+LockDoen 2020
+Covid 19
+Vaccinated
+LockDoen 2020
+Covid 19
+Vaccinated
+
+
+Qb) Write a program in which thread sleep for 6 sec in the loop in reverse order from 100 to 1 and change the name of thread.
+
+class Ass2A2 extends Thread
+{
+public void run()
+{
+for(int i=100;i>0;i--)
+{
+try
+{
+Thread.sleep(6);
+}
+catch(Exception e)
+{
+}
+System.out.println(i);
+}
+}
+public static void main(String args[])
+{
+Ass2A2 a=new Ass2A2();
+a.start();
+}
+}
+OutPut:-
+ java Ass2A2
+100
+99
+98
+97
+96
+95
+94
+93
+92
+91
+90
+89
+88
+87
+86
+85
+84
+83
+82
+81
+. .
+. .
+5
+4
+3
+2
+1
+Qc) Write a program to solve producer consumer problem in which a producer produces a value and consumer consume the value before producer generate the next value. (Hint: use thread synchronization)
+
+import java.util.LinkedList;
+class Ass2A3
+{
+public static void main(String args[])throws InterruptedException
+{
+final PC pc=new PC();
+Thread t1=new Thread(new Runnable(){
+public void run()
+{
+try
+{
+pc.produce();
+}
+catch(Exception e)
+{
+}
+}
+});
+Thread t2=new Thread(new Runnable(){
+public void run()
+{
+try
+{
+pc.consume();
+}
+catch(Exception e)
+{
+}
+}
+});
+t1.start();
+t2.start();
+
+t1.join();
+t2.join();
+}
+}
+class PC
+{
+LinkedList l=new LinkedList();
+int capacity=2;
+public void produce()throws InterruptedException
+{
+int value=0;
+while(true)
+{
+synchronized(this)
+{
+while(l.size()==capacity)
+wait();
+System.out.println("producer produced"+value);
+l.add(value++);
+notify();
+Thread.sleep(1000);
+}
+}
+}
+public void consume()throws InterruptedException
+{
+while(true)
+{
+synchronized(this)
+{
+while(l.size()==0)
+wait();
+Integer v=(Integer)l.removeFirst();
+System.out.println("consume consumed"+v);
+notify();
+Thread.sleep(1000);
+}
+}
+}
+}
+Output:-
+ java Ass2A3
+producer produced0
+producer produced1
+consume consumed0
+consume consumed1
+producer produced2
+. .
+. .
+
+
+Set-B: -
+ Qa) Write a program to calculate the sum and average of an array of 1000 integers (generated randomly) using 10 threads. Each thread calculates the sum of 100 integers. Use these values to calculate average. [Use join method].
+
+import java.util.*;
+class thread implements Runnable
+{
+            Thread t;
+                        int i,no,sum;
+                        int a[]=new int[1000];
+                        thread(String s,int n)
+                        {
+                                    Random rs = new Random();
+                                                t=new Thread(this,s);
+                                                no=n;
+                                                int j=0;
+                                                for(i=1;i<=1000;i++)
+                                                {
+                                                            a[j]=rs.nextInt()%100;;
+                                                                        j++;
+                                                }
+                                    t.start();
+                        }
+            public void run() {
+                        for(i=0;i<100;i++)
+                        {
+                                    sum=sum+a[no];
+                                                no++;
+                        }
+                        System.out.println("Sum = "+sum);
+                        System.out.println("Avg ="+sum/100);
+            }
+           
+}
+public class SumThread
+{
+            public static void main(String[] arg) throws InterruptedException
+            {
+                        thread t1=new thread("g",1);
+                                    t1.t.join();
+                                    thread t2=new thread("r",100);
+                                    t2.t.join();
+                                    thread t3=new thread("s",200);
+                                    t3.t.join();
+                                    thread t4=new thread("t",300);
+                                    t4.t.join();
+                                    thread t5=new thread("p",400);
+                                    t5.t.join();
+                        thread t6=new thread("p",500);
+                                    t5.t.join();
+                        thread t7=new thread("p",600);
+                                    t5.t.join();
+                        thread t8=new thread("p",700);
+                                    t5.t.join();
+                        thread t9=new thread("p",800);
+                                    t5.t.join();
+                        thread t10=new thread("p",900);
+                                    t5.t.join();
+
+            }
+}
+
+Output:-
+B1
+Average of 1000 intgers is:10.5
+
+Qb) Write a program for a simple search engine. Accept a string to be searched. Search for the string in all text files in the current folder. Use a separate thread for each file. The result should display the filename, line number where the string is found.
+
+import java.io.*;
+class B2 extends Thread
+{
+ File f1;
+ String fname;
+ static String str;
+ String line;
+LineNumberReader r=null;
+B2(String fname)
+{
+ this.fname=fname;
+ f1=new File(fname);
+}
+public void run()
+{
+	try
+	{
+		FileReader fr=new FileReader(f1);
+		r=new LineNumberReader(fr);
+		while((line=r.readLine())!= null)
+		{
+			if(line.indexOf(str)!=-1)
+			{
+			System.out.println("String found"+fname+"at"+r.getLineNumber());
+			stop();
+			}
+		}
+	}
+	catch(Exception e)
+	{
+	}
+}
+public static void main(String args[])throws IOException 
+{
+Thread t[]=new Thread[20];
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.println("enter string to be searched:");
+str=br.readLine();
+FilenameFilter f=new FilenameFilter()
+{
+public boolean accept(File file,String name)
+{
+	if(name.endsWith(".txt"))
+		{
+			return true;
+		}
+	else
+		{
+			return false;
+		}
+}
+};
+File dir1=new File(".");
+File[] files=dir1.listFiles(f);
+if(files.length==0)
+{
+System.out.println("no files available:");
+}
+else
+{
+for(int i=0;i<files.length;i++)
+	{
+	for(File aFile:files)
+		{
+			t[i]=new B2(aFile.getName());
+			t[i].start();
+		}
+	}
+}
+}
+}
+
+
+
+Qc) Write a program that implements a multi-thread application that has three threads. First thread generates random integer every 1 second and if the value is even, second thread computes the square of the number and prints. If the value is odd, the third thread will print the value of cube of the number.
+
+import java.util.Random;
+class Square extends Thread
+{
+int x;
+Square(int n)
+{
+ x=n;
+}
+public void run()
+{
+int sqr=x*x;
+System.out.println("Sqaure:"+sqr);
+}
+}
+class Cube extends Thread
+{
+int x;
+Cube(int n)
+{
+ x=n;
+}
+public void run()
+{
+int sqr=x*x*x;
+System.out.println("Cube:"+sqr);
+}
+}
+class Num extends Thread
+{
+public void run()
+{
+ Random r=new Random();
+ for(int i=0;i<5;i++)
+{
+ int rint=r.nextInt(100);
+ System.out.println("random integer:"+rint);
+Square s=new Square(rint);
+s.start();
+Cube c=new Cube(rint);
+c.start();
+try
+{
+Thread.sleep(1000);
+}
+catch(Exception e){}
+}
+}
+}
+class B3
+{
+public static void main(String args[])
+{
+Num n=new Num();
+n.start();
+}
+}
+
+
+
+
+
+Assignment:3- Database Programming
+Set-A
+a) Create a PROJECT table with fields project_id, Project_name, Project_description, Project_Status. etc. Insert values in the table. Display all the details of the PROJECT table in a tabular format on the screen.(using swing). 
+
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.*;
+import java.sql.*;
+public class A1 extends JFrame{
+DefaultTableModel model;
+JTable table;
+JScrollPane jsp;
+Connection con;
+Statement stmt;
+ResultSet rs;
+A1(){
+	setLayout(null);
+	model = new DefaultTableModel();
+	table = new JTable(model);
+	model.addColumn("proj_id");
+	model.addColumn("Name");
+	model.addColumn("Discription");
+	jsp = new JScrollPane(table);
+	jsp.setBounds(100,50,600,200);
+	add(jsp);
+	try{
+		Class.forName("org.postgresql.Driver");
+		con = DriverManager.getConnection("jdbc:postgresql://172.168.0.254/tybcsdb90","tybcs90","");
+		stmt = con.createStatement();
+		rs = stmt.executeQuery("select * from project");
+		int f = 0;
+		while(rs.next()){
+			f = 1;
+			model.addRow(new String[]{
+			rs.getString(1),rs.getString(2),rs.getString(3)});
+		}
+		if(f==0){
+			JOptionPane.showMessageDialog(null,"Record not found");
+		}
+		rs.close();
+		stmt.close();
+		con.close();
+	}catch(Exception e){
+		JOptionPane.showMessageDialog(null,"Exception caught :"+e);
+	}
+setSize(900,800);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setVisible(true);
+setTitle("Project Records");
+}
+	public static void main(String [] args){
+		new A1();
+	}
+}
+
+
+
+b) Write a program to display information about the database and list all the tables in the database. (Use DatabaseMetaData).
+
+import java.io.*;
+import java.sql.*;
+class A2{
+	public static void main(String [] args)throws Exception{
+		Class.forName("org.postgresql.Driver");
+		Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "");
+		DatabaseMetaData db = con.getMetaData();
+		System.out.println("\nDatabase Product Name :" +db.getDatabaseProductName());
+		System.out.println("\nDatabase User Name :"+db.getUserName());
+		System.out.println("\nDatabse Driver Name : "+db.getDriverName());
+		System.out.println("\nDatabase Driver Version :"+db.getDriverVersion());
+		System.out.println("\nDatabase Version :" +db.getDriverMajorVersion());
+		ResultSet rs = db.getTables(null,null,null,new String [] {"TABLE"});
+		System.out.println("\nTable present in the database are :");
+	
+		while(rs.next()){
+			String tableName = rs.getString("TABLE_NAME");
+			System.out.println(tableName);
+		}
+	}
+}
+
+OR
+
+
+
+
+c) Write a program to display information about all columns in the DONAR table using ResultSetMetaData. 
+
+import java.io.*;
+import java.sql.*;
+class A3 {
+	public static void main(String [] args)throws Exception{
+		
+		Class.forName("org.postgresql.Driver");
+		Connection con = DriverManager.getConnection("jdbc:postgresql://172.168.0.254/tybcsdb90","tybcs90","");
+		Statement stmt = con.createStatement();
+		
+		ResultSet rs = stmt.executeQuery("select * from student");
+		ResultSetMetaData rsmd = rs.getMetaData();
+		int col = rsmd.getColumnCount();
+		System.out.println("\nNumber of columns :"+col);
+		System.out.println("\n\nColumn No -- Column Name -- Column Type\n");
+		for(int i = 1; i <= col;i++){
+			System.out.print("  "+i + "\t\t");
+			System.out.print(rsmd.getColumnName(i)+"\t\t");
+			System.out.print(rsmd.getColumnTypeName(i)+"\t\n");
+		}
+		System.out.println("\n\n");
+		rs.close();
+		stmt.close();
+		con.close();
+	}
+}
+
+
+
+Set-B
+ a) Create a MOBILE table with fields Model_Number, Model_Name, Model_Color, Sim_Type, NetworkType, BatteryCapacity, InternalStorage, RAM and ProcessorType. Insert values in the table. Write a menu driven program to pass the input using Command line argument to perform the following operations on MOBILE table. 1. Insert 2. Modify 3. Delete 4. Search 5. View All 6. Exit
+
+import java.sql.*;
+import java.io.*;
+class B1{
+	public static void main(String [] args)throws Exception{
+		String name,query;
+		int roll,per;	
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Class.forName("org.postgresql.Driver");
+		Connection con = DriverManager.getConnection("jdbc:postgresql://172.168.0.254/tybcsdb90","tybcs90","");
+		Statement stmt = con.createStatement();
+		ResultSet rs;
+		while(true){
+			System.out.println("\n MENU \n");
+			System.out.println("1.Insert\n2.Modify\n3.Delete\n4.Search\n5.ViewAll\n6.Exit");
+			System.out.println("Enter your chooe:");
+			int ch = Integer.parseInt(br.readLine());
+			switch(ch){
+			case 1:
+				System.out.println("Enter roll no :");
+				roll = Integer.parseInt(br.readLine());
+				System.out.println("Enter name :");
+				name = br.readLine();
+				System.out.println("Enter percentage :");
+				per = Integer.parseInt(br.readLine());
+				query = "insert into stud values("+roll+",'"+name+"',"+per+")";
+				stmt.executeUpdate(query);
+				break;
+			case 2:
+				System.out.println("Enter roll no  to modity record:");
+				roll = Integer.parseInt(br.readLine());
+				System.out.println("Updation keys=> 1:Name 2:Percentage 3:Both:");
+				int k =Integer.parseInt(br.readLine());
+				if(k == 1){
+					System.out.println("Enter new name :");
+					name = br.readLine();
+					query = "update stud set name='"+name+"' where rollno="+roll+";";
+	stmt.executeUpdate(query);	
+				}else if(k == 2){
+					System.out.println("Enter new percentage :");
+					per =Integer.parseInt(br.readLine());
+					query = "update stud set percentage='"+per+"' where rollno="+roll+";";
+	stmt.executeUpdate(query);	
+				}else if(k == 3){
+					System.out.println("Enter new name :");
+					name = br.readLine();
+					System.out.println("Enter new percentage :");
+					per =Integer.parseInt(br.readLine());
+					query = "update stud set name='"+name+"',percentage='"+per+"' where rollno="+roll+";";
+					stmt.executeUpdate(query);	
+				}
+				break;
+			case 3:
+				System.out.println("Enter roll no of student that you want to delete:");
+				roll = Integer.parseInt(br.readLine());
+				query = "delete from stud where rollno ="+roll+";";
+				stmt.executeUpdate(query);
+				break;
+			case 4:
+				System.out.println("Enter name of student that you want to search:");
+				name = br.readLine();
+				query = "select * from stud where name='"+name+"';";
+				rs = stmt.executeQuery(query);
+				while(rs.next())
+					System.out.println(rs.getInt(1)+"\t"+rs.getString(2)+"\t"+rs.getInt(3));
+				break;
+			case 5:
+				System.out.println("\nRecords in Database");
+				rs = stmt.executeQuery("select * from stud;");
+				while(rs.next()){
+					System.out.println(rs.getInt(1)+"\t"+rs.getString(2)+"\t"+rs.getInt(3));
+				}
+				break;
+			case 6:
+				System.exit(0);
+			}
+		}
+	}
+} 
+
+
+ b) Design a following Registration form and raise an appropriate exception if invalid information is entered like Birth Year '0000' 
+
+import java.sql.*;
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+class PhoneBook implements ActionListener{
+	JFrame f;
+	JLabel l1,l2,l3,l4,l5,l6,l7;
+	JTextField t1,t2,t3,t4;
+	JButton b1,b2,b3,b4,b5;
+	JPanel p1,p2;
+	Connection con;
+	Statement stmt;
+	ResultSet rs;
+	int record;
+	
+	PhoneBook(){
+		f = new JFrame("Phone Book");
+		p1 = new JPanel();
+		p2 = new JPanel();
+		
+		l1 = new JLabel("Aadhar Card No");
+		l2 = new JLabel("Birth Year");
+		l3 = new JLabel("PHONE Number");
+		l4 = new JLabel("Age Group");
+                 l5 = new JLabel("Hospital");
+		l6= new JLabel("vaccines");
+		l7= new JLabel("Timing");
+		t1 = new JTextField(10);
+		t2 = new JTextField(10);
+		t3 = new JTextField(10);
+		t4 = new JTextField(10);
+		b1 = new JButton("<<");
+		b2 = new JButton("DELETE");
+		b3 = new JButton("UPDATE");
+		b4 = new JButton(">>");
+		b5 = new JButton("EXIT");
+		
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		b4.addActionListener(this);
+		b5.addActionListener(this);
+		try{
+			Class.forName("org.postgresql.Driver");
+			con = DriverManager.getConnection("jdbc:postgresql://172.168.0.254/tybcsdb90","tybcs90","");
+			stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			rs = stmt.executeQuery("select * from cowin");
+		} catch (Exception e) {
+		}
+		f.setLayout(new GridLayout(2, 1, 10, 10));
+		p1.setLayout(new GridLayout(4, 2, 10, 10));
+		p1.add(l1);
+		p1.add(t1);
+		p1.add(l2);
+		p1.add(t2);
+		p1.add(l3);
+		p1.add(t3);
+		p1.add(l4);
+		p1.add(t4);
+		p1.add(l5);
+		p1.add(l6);
+		p1.add(l7);
+		p2.setLayout(new GridLayout(1, 5, 10, 10));
+		p2.add(b1);
+		p2.add(b2);
+		p2.add(b3);
+		p2.add(b4);
+		p2.add(b5);
+		f.add(p1);
+		f.add(p2);
+		f.setSize(900, 1000);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setVisible(true);
+		f.setResizable(false);
+	}
+	public void actionPerformed(ActionEvent ae) {
+		JButton input = (JButton) ae.getSource();
+		if (input == b1) {
+			previous();
+		} else if (input == b2) {
+			delete();
+		} else if (input == b3) {
+			update();
+		} else if (input == b4) {
+			next();
+		} else if (input == b5) {
+			System.exit(0);
+		}
+	}
+	public void previous() {
+		try {
+			if (rs.isAfterLast()) {
+				rs.last();
+			} else {
+				rs.previous();
+			}
+			t1.setText(rs.getString(1));
+			t2.setText(rs.getString(2));
+			t3.setText(rs.getString(3));
+			t4.setText(rs.getString(4));
+		} catch (Exception e) {
+		}
+	}
+	public void delete() {
+		try {
+			String n = t1.getText();
+			record = stmt.executeUpdate("delete from cowin where name='" + n + "'");
+			if (record > 0)
+				JOptionPane.showMessageDialog(null, record + " record is deleted");
+			else
+				JOptionPane.showMessageDialog(null, "Record is not deleted");
+		} catch (Exception e) {
+		}
+	}
+	public void update() {
+		try {
+			String name = t1.getText();
+			String add = t2.getText();
+			String phone = t3.getText();
+			String email = t4.getText();
+			record = stmt.executeUpdate("update cowin set name='" + name + "',address='" + add + "',phone='" + phone
+					+ "',email='" + email + "' where name='" + name + "'");
+			if (record > 0)
+				JOptionPane.showMessageDialog(null, record + " record is updated");
+			else
+				JOptionPane.showMessageDialog(null, "Record is not updated");
+		} catch (Exception e) {
+		}
+	}
+	public void next() {
+		try {
+			if (rs.isBeforeFirst()) {
+				rs.first();
+			} else {
+				rs.next();
+			}
+			t1.setText(rs.getString(1));
+			t2.setText(rs.getString(2));
+			t3.setText(rs.getString(3));
+			t4.setText(rs.getString(4));
+		} catch (Exception e) {
+		}
+	}
+}
+class B2{
+	public static void main(String[] args) {
+		PhoneBook pb = new PhoneBook();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Assignment:4- Servlets and JSP
+
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		PrintWriter out=response.getWriter();
+		
+		out.println(request.getHeader("User-Agent"));
+		out.println(request.getHeader("X-FORWARDED-FOR"));
+		out.println(request.getServerName());
+		
+		
+Set-A
+ a) Design a servlet that provides information about a HTTP request from a client, such as IP address and browser type. The servlet also provides information about the server on which the servlet is running, such as the operating system type, and the names of currently loaded servlets. 
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class A1 extends HttpServlet
+{
+protected void doGet(HttpServletRequest request, HttpServletResponse res)throws ServletException, IOException
+{
+res.setContentType("text/html");
+PrintWriter out=res.getWriter();
+out.print("<html>");
+out.print("<body>welcome</body>");
+java.util.Properties p=System.getProperties();
+out.print("Server name:"+request.getServerName());
+out.println("Remote Address:"+request.getRemoteAddr());
+out.print("</html>");
+}
+}
+
+
+b) Write a Program to make use of following JSP implicit objects: i. out: To display current Date and Time. ii. request: To get header information. iii. response: To Add Cookie iv. config: get the parameters value defined in v. application: get the parameter value defined in vi. session: Display Current Session ID vii. pageContext: To set and get the attributes. viii. page: get the name of Generated Servlet
+
+<%@ page import="java.util.*" %>
+<%@ page import="java.io.*" %>
+<html>
+<body>
+<h1> Current time is </h1>
+<% out.print(new java.util.Date()); %>
+<% PrintWriter pw=response.getWriter();
+pw.print("this is jsp"); %>
+<%= request.getLocale().toString() %>
+<%= config.getServletName() %><br>
+<%= session.getCreationTime() %><br>
+</body>
+</html>
+
+c) Write a program to create a Online Book purchase. User must be login and then purchase the book. Each page should have a page total. The last page should display a total book and bill, which consists of a page total of what ever the purchase has been done and print the total. (Use HttpSession) 
+
+page1.html
+<html>
+<head> page1</head>
+<body>
+<form method="GET" action="Pser1">
+<input type=Checkbox name="item" value=100>Book - 100<br>
+<input type=Checkbox name="item" value=200>CD - 200<br>
+<input type=Checkbox name="item" value=300>TAPE - 300<br>
+<input type=submit>
+<input type=reset>
+</form>
+</body>
+</html>
+
+page2.html
+<html>
+<head> page2</head>
+<body>
+<form method="GET" action="Pser2">
+<input type=Checkbox name="item" value=1000>printer - 1000<br>
+<input type=Checkbox name="item" value=2000>pen drive - 2000<br>
+<input type=Checkbox name="item" value=3000>camera - 3000<br>
+<input type=submit>
+<input type=reset>
+</form>
+</body>
+</html>
+
+Pser1.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class Pser1 extends HttpServlet
+{
+protected void doGet(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException
+{
+res.setContentType("text/html");
+PrintWriter out=res.getWriter();
+int sum=0;
+String[] values=req.getParameterValues("item");
+if(values!=null)
+{
+for(int i=0;i<values.length;i++)
+sum=sum+Integer.parseInt(values[i]);
+}
+HttpSession hs=req.getSession(true);
+hs.setAttribute("page1",sum);
+res.sendRedirect("page2.html");
+}
+}
+
+Pser2.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class Pser2 extends HttpServlet
+{
+protected void doGet(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException
+{
+res.setContentType("text/html");
+PrintWriter out=res.getWriter();
+int sum2=0;
+String[] values=req.getParameterValues("item");
+if(values!=null)
+{
+for(int i=0;i<values.length;i++)
+sum2=sum2+Integer.parseInt(values[i]);
+}
+HttpSession hs=req.getSession(true);
+int sum1=((Integer)hs.getAttribute("page1")).intValue();
+out.println("<html>");
+out.println("<title>Summary</title><body>");
+out.println("Total of page 1="+sum1);
+out.println("Total of Page 2="+sum2);
+int total= sum1+sum2;
+out.println("Total Bill:"+total);
+}
+}
+
+
+Set-B 
+a) Design an HTML page which passes customer number to a search servlet. The servlet searches for the customer number in a database (customer table) and returns customer details if found the number otherwise display error message. 
+
+SearchSer.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+import javax.servlet.http.Cookie;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class SearchSer extends HttpServlet
+ {
+ protected void doGet(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException
+{
+res.setContentType("text/html");
+PrintWriter out=res.getWriter();
+out.print("<html>");
+out.print("<body>");
+Connection con=null;
+Statement stmt=null;
+ResultSet rs=null;
+String sql;
+String roll=req.getParameter("rno");
+if(roll==null)
+out.println("no input provided");
+else
+{ int r=Integer.parseInt(roll);
+try
+{
+ Class.forName("org.postresql.Driver");
+con=DriverManager.getConnection("jdbc:postgresql://172.168.0.254/tybcsdb90","tybcs90","");
+if(con==null)
+out.println("Connection failed");
+else
+{
+stmt=con.createStatement();
+sql="select * from student where rno="+r;
+rs=stmt.executeQuery(sql);
+if(rs==null)
+out.println("record not found");
+else
+if(rs.next())
+out.println("roll no:"+rs.getInt(1)+"\n"+"Name:"+rs.getString(2)+"\n");
+}
+}
+catch(Exception e)
+{
+}
+}
+}
+}
+
+
+search.html
+<html>
+<head> page1</head>
+<body>
+<form method="GET" action="SearchSer">
+enter roll to be search:
+<input type=text name="rno">
+
+<input type=submit>
+<input type=reset>
+</form>
+</body>
+</html>
+
+b) Design an HTML page containing option buttons (Maths, Physics, Chemistry and Biology) and buttons submit and reset. When the user clicks submit, the server responds by adding a cookie containing the selected subject and sends a message back to the client. Program should not allow duplicate cookies to be written. 
+
+hobby.html
+<html>
+<head> page1</head>
+<body>
+<form method="GET" action="HobbySer">
+<input type=radio name=hobby value="Maths">MATHS<br>
+<input type=radio name=hobby value="physics">physics<br>
+<input type=radio name=hobby value="Chemistry">Chemistry<br>
+<input type=radio name=hobby value="Biology">Biology<br>
+<input type=submit>
+<input type=reset>
+</form>
+</body>
+</html>
+
+HobbySer.java
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.http.Cookie;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class HobbySer extends HttpServlet
+{
+ protected void doGet(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException
+{
+res.setContentType("text/html");
+PrintWriter out=res.getWriter();
+out.print("<html>");
+out.print("<body>");
+String d=req.getParameter("hobby");
+Cookie c[]=req.getCookies();
+if(c!=null)
+{
+out.println("existing cookie:");
+for(int i=0;i<c.length;i++)
+{
+if(c[i].getValue().equals(d))
+{
+out.println("cookie exists for:"+d);
+return;
+}
+}
+}
+Cookie c1=new Cookie("hobby",d);
+c1.setMaxAge(6000);
+res.addCookie(c1);
+out.println("Cookie added for hobby:"+d);
+}
+}
+
+c) Write a JSP program to display the details of PATIENT (PatientNo, PatientName, PatientAddress, Patientage,PatientDiease) in tabular form on browser
+
+<%@ page import="java.sql.*"%>
+<% Class.forName("org.postgresql.Driver"); %>
+<html>
+<head>
+<title>database</title>
+</head>
+<body bgcolor="aqua">
+<%
+Connection con=DriverManager.getConnection("jdbc:postgresql://172.168.0.254/tybcsdb90","tybcs90","");
+Statement stmt=con.createStatement();
+sql="select * from student";
+ResultSet rs=stmt.executeQuery(sql);
+%>
+<table border=5>
+<tr>
+<th>STUD ID</th>
+<th>Name</th>
+</tr>
+<% while(rs.next()){
+%>
+
+<tr>
+<td>
+<%= rs.getInt(1)
+%>
+</td>
+<td>
+<%= rs.getString(2)
+%>
+</td>
+</tr>
+<%
+}
+%>
+</table>
+</body>
+</html>
+<web-app>
+   <servlet>
+     <servlet-name>A1</servlet-name>
+     <servlet-class>A1</servlet-class>
+   </servlet>
+     <servlet-mapping>
+      <servlet-name>A1</servlet-name>
+      <url-pattern>/A1</url-pattern>
+    </servlet-mapping>
+ 
+<servlet>
+     <servlet-name>HobbySer</servlet-name>
+     <servlet-class>HobbySer</servlet-class>
+   </servlet>
+     <servlet-mapping>
+      <servlet-name>HobbySer</servlet-name>
+      <url-pattern>/HobbySer</url-pattern>
+    </servlet-mapping>
+
+ <servlet>
+     <servlet-name>MyServlet</servlet-name>
+     <servlet-class>MyServlet</servlet-class>
+   </servlet>
+     <servlet-mapping>
+      <servlet-name>MyServlet</servlet-name>
+      <url-pattern>/MyServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+     <servlet-name>Pser1</servlet-name>
+     <servlet-class>Pser1</servlet-class>
+   </servlet>
+     <servlet-mapping>
+      <servlet-name>Pser1</servlet-name>
+      <url-pattern>/Pser1</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+     <servlet-name>Pser2</servlet-name>
+     <servlet-class>Pser2</servlet-class>
+   </servlet>
+     <servlet-mapping>
+      <servlet-name>Pser2</servlet-name>
+      <url-pattern>/Pser2</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+     <servlet-name>SearchSer</servlet-name>
+     <servlet-class>SearchSer</servlet-class>
+   </servlet>
+     <servlet-mapping>
+      <servlet-name>SearchSer</servlet-name>
+      <url-pattern>/SearchSer</url-pattern>
+    </servlet-mapping>
+  
+  </web-app>

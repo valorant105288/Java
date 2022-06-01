@@ -1,0 +1,33 @@
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Trial {
+    @RequestMapping("/string")
+    public String show() {
+
+        return "Enter the Val";
+    }
+}
+
+//
+
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Trial {
+    @RequestMapping("/dates")
+    public Date show() {
+
+        return new Date();
+    }
+}

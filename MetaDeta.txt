@@ -1,0 +1,21 @@
+import java.io.;
+import java.sql.;
+class A2{
+    public static void main(String [] args)throws Exception{
+        Class.forName("org.postgresql.Driver");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "");
+        DatabaseMetaData db = con.getMetaData();
+        System.out.println("\nDatabase Product Name :" +db.getDatabaseProductName());
+        System.out.println("\nDatabase User Name :"+db.getUserName());
+        System.out.println("\nDatabse Driver Name : "+db.getDriverName());
+        System.out.println("\nDatabase Driver Version :"+db.getDriverVersion());
+        System.out.println("\nDatabase Version :" +db.getDriverMajorVersion());
+        ResultSet rs = db.getTables(null,null,null,new String [] {"TABLE"});
+        System.out.println("\nTable present in the database are :");
+
+        while(rs.next()){
+            String tableName = rs.getString("TABLE_NAME");
+            System.out.println(tableName);
+        }
+    }
+}
